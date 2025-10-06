@@ -25,4 +25,3 @@ urlpatterns = [
     path("", home, name="home"),
     path("admin/", admin.site.urls),
 ]
-ECHO is on.
