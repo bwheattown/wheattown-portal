@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'dashboard',
+    'workorders',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +56,9 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = "dashboard"
+LOGOUT_REDIRECT_URL = "home"
 ROOT_URLCONF = 'shopops.urls'
 
 TEMPLATES = [

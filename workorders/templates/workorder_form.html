@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ view.object|yesno:"Edit Work Order,New Work Order" }} · WheatTown{% endblock %}
+{% block content %}
+  <h2>{{ view.object|yesno:"Edit Work Order,New Work Order" }}</h2>
+  <form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn" type="submit">Save</button>
+  </form>
+{% endblock %}

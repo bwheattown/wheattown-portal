@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}WO #{{ object.id }} · WheatTown{% endblock %}
+{% block content %}
+  <h2>WO #{{ object.id }} — {{ object.title }}</h2>
+  <p><strong>Status:</strong> {{ object.get_status_display }} · <strong>Priority:</strong> {{ object.get_priority_display }}</p>
+  <p><strong>Customer:</strong> {{ object.customer|default:"—" }} · <strong>Assigned:</strong> {{ object.assigned_to|default:"—" }}</p>
+  <p><strong>Due:</strong> {{ object.due_date|date:"Y-m-d"|default:"—" }}</p>
+  <p><strong>Hours:</strong> {{ object.total_hours }} · <strong>Cost:</strong> €{{ object.total_cost }}</p>
+  <pre class="mono">{{ object.description|default:"(no description)" }}</pre>
+  <p>
+    <a class="btn" href="{% url 'workorders:update' object.pk %}">Edit</a>
+    <a class="btn btn-danger" href="{% url 'workorders:delete' object.pk %}">Delete</a>
+  </p>
+{% endblock %}

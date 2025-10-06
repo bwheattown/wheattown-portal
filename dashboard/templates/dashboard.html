@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Dashboard · WheatTown{% endblock %}
+{% block content %}
+  <h2>Dashboard</h2>
+  <ul class="cards">
+    <li><a class="card" href="{% url 'workorders:list' %}">
+      <h3>Work Orders</h3><p>Create, assign, and track.</p>
+    </a></li>
+    <li><a class="card" href="#">
+      <h3>Billing</h3><p>Coming soon: invoices & payments.</p>
+    </a></li>
+  </ul>
+{% endblock %}

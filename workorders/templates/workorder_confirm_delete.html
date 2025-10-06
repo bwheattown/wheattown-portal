@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Delete Work Order · WheatTown{% endblock %}
+{% block content %}
+  <h2>Delete WO #{{ object.id }}?</h2>
+  <p>This cannot be undone.</p>
+  <form method="post">{% csrf_token %}
+    <button class="btn btn-danger" type="submit">Delete</button>
+    <a class="btn" href="{% url 'workorders:detail' object.pk %}">Cancel</a>
+  </form>
+{% endblock %}
