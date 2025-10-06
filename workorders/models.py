@@ -1,3 +1,5 @@
+# workorders/models.py
+
 from django.db import models
 from django.contrib.auth import get_user_model
 
@@ -22,8 +24,8 @@ class WorkOrder(models.Model):
     opened_at = models.DateTimeField(auto_now_add=True)
     due_date = models.DateField(null=True, blank=True)
     assigned_to = models.ForeignKey(get_user_model(), null=True, blank=True, on_delete=models.SET_NULL)
-    total_hours = models.DecimalField(max_digits=6, decimal_places=2, default=0)
-    total_cost = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    total_hours = models.DecimalField(max_digits=6, decimal_places=2, default=0, blank=True)   # <-- allow blank
+    total_cost  = models.DecimalField(max_digits=10, decimal_places=2, default=0, blank=True)  # <-- allow blank
 
     def __str__(self):
         return f"WO#{self.pk or '-'} · {self.title}"
