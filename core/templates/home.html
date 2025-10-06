@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load tz %}
+{% now "UTC" as now %}
+{% block content %}
+<section class="hero">
+  <h1>Wheattown Portal is live</h1>
+  <p>Internal tools for customers, work orders, time & billing.</p>
+</section>
+
+<section class="cards">
+  <div class="card">
+    <h3>Employee Login</h3>
+    <p>Access the portal features after you sign in.</p>
+    <a class="btn" href="/accounts/login/">Login</a>
+  </div>
+  <div class="card">
+    <h3>Admin</h3>
+    <p>Manage customers, work orders, and data.</p>
+    <a class="btn" href="/admin/">Open Admin</a>
+  </div>
+  <div class="card">
+    <h3>Status</h3>
+    <p>Everything is humming along. Need help? Ask Ben.</p>
+  </div>
+</section>
+{% endblock %}
