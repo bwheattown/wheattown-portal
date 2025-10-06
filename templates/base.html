@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Wheattown Portal</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    :root{--bg:#0e0e0f;--brand:#ffc107;--text:#0f1220;--card:#ffffff}
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,Segoe UI,Arial}
+    header{background:var(--bg);color:#fff;padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:700;letter-spacing:.3px}
+    .tag{opacity:.85;font-size:.95rem}
+    nav a{color:#fff;text-decoration:none;margin-left:14px}
+    main{max-width:960px;margin:28px auto;padding:0 16px}
+    .hero{background:linear-gradient(135deg,#111 0%,#1a1a1a 100%);color:#fff;border-radius:12px;padding:28px;margin-bottom:20px}
+    .hero h1{margin:0 0 8px;font-size:2rem}
+    .hero p{margin:0;opacity:.9}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+    .btn{display:inline-block;background:var(--brand);color:#000;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
+    footer{color:#666;text-align:center;padding:24px 0}
+  </style>
+</head>
+<body>
+<header>
+  <div>
+    <div class="brand">WheatTown Engineering</div>
+    <div class="tag">Powering Your Critical Needs</div>
+  </div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/admin/">Admin</a>
+    {% if user.is_authenticated %}
+      <a href="/accounts/logout/">Logout</a>
+    {% else %}
+      <a href="/accounts/login/">Login</a>
+    {% endif %}
+  </nav>
+</header>
+
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+<footer>
+  © {{ now|date:"Y" }} WheatTown Engineering · All rights reserved.
+</footer>
+</body>
+</html>

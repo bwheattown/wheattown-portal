@@ -16,10 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.http import HttpResponse
+from django.shortcuts import path
 
 def home(request):
-    return HttpResponse("Wheattown portal is live. Go to <a href='/admin/'>/admin</a> to log in.")
+    return render(request, "home.html")
 
 urlpatterns = [
     path("", home, name="home"),
