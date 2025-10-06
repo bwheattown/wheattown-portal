@@ -1,12 +1,12 @@
-from django.shortcuts import render
-
-# Create your views here.
+#workorders/views.py
 
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+
 from .models import WorkOrder
+from .forms import WorkOrderForm
 
 @method_decorator(login_required, name="dispatch")
 class WorkOrderList(ListView):
@@ -21,16 +21,17 @@ class WorkOrderDetail(DetailView):
 @method_decorator(login_required, name="dispatch")
 class WorkOrderCreate(CreateView):
     model = WorkOrder
-    fields = ["title","customer","status","priority","description","due_date","assigned_to","total_hours","total_cost"]
+    form_class = WorkOrderForm
     success_url = reverse_lazy("workorders:list")
 
 @method_decorator(login_required, name="dispatch")
 class WorkOrderUpdate(UpdateView):
     model = WorkOrder
-    fields = ["title","customer","status","priority","description","due_date","assigned_to","total_hours","total_cost"]
+    form_class = WorkOrderForm
     success_url = reverse_lazy("workorders:list")
 
 @method_decorator(login_required, name="dispatch")
 class WorkOrderDelete(DeleteView):
     model = WorkOrder
     success_url = reverse_lazy("workorders:list")
+

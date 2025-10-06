@@ -1,7 +1,10 @@
+#workorders/urls.py
+
 from django.urls import path
 from . import views
 
 app_name = "workorders"
+
 urlpatterns = [
     path("", views.WorkOrderList.as_view(), name="list"),
     path("new/", views.WorkOrderCreate.as_view(), name="create"),
