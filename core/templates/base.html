@@ -1,0 +1,25 @@
+{% load static %}
+{% load tz %}
+{% now "UTC" as now %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}WheatTown Portal{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'core/css/site.css' %}">
+</head>
+<body>
+  <header>
+    <a href="/">WheatTown Portal</a>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <small>© {{ now|date:"Y" }} WheatTown</small>
+  </footer>
+</body>
+</html>
