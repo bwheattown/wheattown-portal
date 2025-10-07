@@ -1,7 +1,3 @@
-from django.contrib import admin
-from .models import Customer
+#core/admin.py
 
-@admin.register(Customer)
-class CustomerAdmin(admin.ModelAdmin):
-    list_display = ("name", "email", "phone")
-    search_fields = ("name", "email", "phone")
+from django.contrib import admin
