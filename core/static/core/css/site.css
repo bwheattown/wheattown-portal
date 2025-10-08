@@ -22,7 +22,7 @@ header {
 }
 
 header a {
-  color: white;
+  color: bac4d1;
   text-decoration: none;
   font-weight: 600;
 }
@@ -63,7 +63,7 @@ footer {
 
 .card h3 {
   margin-top: 0;
-  color: #1b4d3e;
+  color: #3d5370;
 }
 
 .btn {
@@ -100,13 +100,14 @@ footer {
 }
 
 .middle-line a {
+  color: #a6afba;     
   text-decoration: none;
-  color: #333;
   font-weight: 500;
+  transition: color 0.2s ease;
 }
 
 .middle-line a:hover {
-  text-decoration: underline;
+  color: #bac4d1;         /* hover color */
 }
 
 .bottom-line {
