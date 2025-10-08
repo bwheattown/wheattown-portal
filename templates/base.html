@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>{% block title %}WheatTown Engineering{% endblock %}</title>
+  <title>{% block title %}WheatTown Engineering Portal{% endblock %}</title>
   <link rel="stylesheet" href="{% static 'core/css/site.css' %}">
 </head>
 <body>
@@ -15,7 +15,7 @@
 
 	{% if user.is_authenticated %}
 	<nav class="middle-line">
-    		<a href="{% url 'workorder_list' %}">Work Orders</a>
+    		<a href="{% url 'workorder:list' %}">Work Orders</a>
 		<a href="#">Customers</a>
 		<a href="#">Invoices</a>
 	</nav>
