@@ -79,3 +79,49 @@ footer {
 .btn:hover {
   background: #246550;
 }
+
+.site-header {
+  text-align: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.top-line h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.middle-line {
+  display: flex;
+  justify-content: center;
+  gap: 4rem; /* even spacing between items */
+  margin: 1rem 0;
+}
+
+.middle-line a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.middle-line a:hover {
+  text-decoration: underline;
+}
+
+.bottom-line {
+  text-align: right;
+  padding-right: 2rem;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #555;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  text-decoration: underline;
+}

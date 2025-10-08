@@ -9,18 +9,26 @@
 </head>
 <body>
   <header class="site-header">
-    <nav class="nav">
-      <a href="{% url 'home' %}" class="brand">WheatTown Engineering</a>
-      <div class="spacer"></div>
-      {% if user.is_authenticated %}
-        <a href="{% url 'dashboard' %}">Dashboard</a>
-        <a href="{% url 'workorders:list' %}">Work Orders</a>
-        <form method="post" action="{% url 'logout' %}" style="display:inline">{% csrf_token %}
-          <button class="linklike">Logout</button>
-        </form>
-      {% endif %}
-    </nav>
+  	<div class="top-line">
+  		<h1>WheatTown Engineering</h1>
+	</div>
+
+	{% if user.is_authenticated %}
+	<nav class="middle-line">
+    		<a href="{% url 'workorder_list' %}">Work Orders</a>
+		<a href="#">Customers</a>
+		<a href="#">Invoices</a>
+	</nav>
+
+	<div class="bottom-line">
+		<form method="post" action="{% url 'logout' %}">
+ 			{% csrf_token %}
+			<button class="logout-btn">Logout</button>
+		</form>
+	</div>
+	{% endif %}
   </header>
+
   <main class="container">
     {% block content %}{% endblock %}
   </main>
